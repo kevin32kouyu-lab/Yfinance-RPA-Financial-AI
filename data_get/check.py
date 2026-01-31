@@ -6,9 +6,12 @@ import ssl
 # 强制降低加密套件的安全等级，以提高与代理的兼容性
 ssl._create_default_https_context = ssl._create_unverified_context
 
-# 配置（需与你之前的设置一致）
-BASE_DIR = "./us_stocks_data"
-PROGRESS_FILE = "progress.txt"
+# 获取路径动态定位
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
+
+BASE_DIR = os.path.join(PROJECT_ROOT, "us_stocks_data")
+PROGRESS_FILE = os.path.join(CURRENT_DIR, "progress.txt")
 PROXY_URL = 'http://127.0.0.1:10808'
 
 # 设置代理以获取 SEC 名单

@@ -2,10 +2,13 @@ import os
 import pandas as pd
 from datetime import datetime
 
-# 配置路径（确保与你的采集脚本一致）
-BASE_DIR = "./us_stocks_data"
-PROGRESS_FILE = "progress.txt"
-REPORT_NAME = "failure_report.csv"
+# 配置路径
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
+
+BASE_DIR = os.path.join(PROJECT_ROOT, "us_stocks_data")
+PROGRESS_FILE = os.path.join(CURRENT_DIR, "progress.txt")
+REPORT_NAME = os.path.join(CURRENT_DIR, "failure_report.csv")
 
 def generate_failure_report():
     print("=" * 50)

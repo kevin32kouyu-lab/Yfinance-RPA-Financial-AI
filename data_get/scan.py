@@ -2,9 +2,12 @@ import os
 import shutil
 from datetime import datetime
 
-# 配置
-BASE_DIR = "./us_stocks_data"
-PROGRESS_FILE = "progress.txt"
+# 配置路径
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
+
+BASE_DIR = os.path.join(PROJECT_ROOT, "us_stocks_data")
+PROGRESS_FILE = os.path.join(CURRENT_DIR, "progress.txt")
 
 def clean_ghost_entries():
     print("=" * 50)

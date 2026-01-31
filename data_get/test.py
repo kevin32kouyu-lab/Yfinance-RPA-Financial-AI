@@ -8,11 +8,17 @@ import urllib3
 from datetime import datetime
 
 # ==================== 1. 基础配置 ====================
-BASE_DIR = "./us_stocks_data"
-PROGRESS_FILE = "progress.txt"
-LOG_FILE = "scrape_log.txt"
-REPORT_INTERVAL = 50 
+# 获取当前脚本所在文件夹的绝对路径 (即 data_get 文件夹)
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+# 获取项目根目录 (data_get 的上一级)
+PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
 
+# 动态定位到根目录下的 us_stocks_data
+BASE_DIR = os.path.join(PROJECT_ROOT, "us_stocks_data")
+# progress.txt 就在当前 data_get 文件夹里
+PROGRESS_FILE = os.path.join(CURRENT_DIR, "progress.txt")
+LOG_FILE = os.path.join(CURRENT_DIR, "scrape_log.txt")
+REPORT_INTERVAL = 50
 # [配置] 代理地址 (保持你的 10808 端口)
 PROXY_URL = 'http://127.0.0.1:10808'
 

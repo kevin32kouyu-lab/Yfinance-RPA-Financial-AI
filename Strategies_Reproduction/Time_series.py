@@ -94,8 +94,10 @@ if __name__ == "__main__":
         plt.grid(True)
         plt.tight_layout()
 
-        # 关键修改：保存图片到本地
-        save_path = 'strategy_result.png'
+        # 关键修改：保存图片到脚本所在目录，而不是根目录
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        save_path = os.path.join(current_dir, 'strategy_result.png')
+        
         plt.savefig(save_path)
         print(f"✅ 图片已保存为: {save_path}")
         
