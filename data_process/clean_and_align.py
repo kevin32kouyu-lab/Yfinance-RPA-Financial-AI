@@ -11,7 +11,7 @@ current_script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(current_script_dir)
 
 SOURCE_DIR = os.path.join(project_root, "us_stocks_data")
-OUTPUT_DIR = os.path.join(project_root, "data_process")
+OUTPUT_DIR = os.path.join(project_root, "data_process", "output")
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "full_market_data.parquet")
 
 if not os.path.exists(OUTPUT_DIR):
